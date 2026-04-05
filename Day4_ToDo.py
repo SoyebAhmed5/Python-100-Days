@@ -1,28 +1,3 @@
-import json
-
-with open('json_data', 'r') as file:
-  tasks = json.load(file)
-  print(tasks)
-
-import json
-
-tasks = [
-    {"task": "Complete Project", "status": "Incomplete"}
-]
-
-with open('tasks.json', 'w') as file:
-  json.dump(tasks, file, indent=2)
-
-import json
-
-with open('tasks.json', 'r') as file:
-  tasks = json.load(file)
-
-tasks.append({"task": "Learn Python 2", "status": "Incomplete"})
-
-with open('tasks.json', 'w') as file:
-  json.dump(tasks, file, indent=2)
-
 # Mini To-Do App using JSON
 import json
 import os
