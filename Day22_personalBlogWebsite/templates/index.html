@@ -1,0 +1,11 @@
+{% extends "layout.html" %} {% block content %}
+<h2>Welcome to My Blog</h2>
+<p>Here are some of my latest posts:</p>
+<ul>
+  {% for post in posts %}
+  <li>
+    <a href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
