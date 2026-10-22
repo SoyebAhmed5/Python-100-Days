@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}" />
+    <title>Contact Form</title>
+  </head>
+  <body>
+    <h1>Contact Us</h1>
+    <form method="Post">
+        {{ form.hidden_tag() }}
+        <p>{{ form.name.label }} <br>{{ form.name }}</p>
+        <p>{{ form.email.label }} <br>{{ form.email }}</p>
+        <p>{{ form.message.label }} <br>{{ form.message }}</p>
+        <p>{{ form.submit }}</p>
+    </form>
+    {% with message = get_flashed_messages(with_categories=true )%}
+        {% if messages %}
+            {% for category, message in messages%}
+                <p class="{{ category }}">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+  </body>
+</html>
