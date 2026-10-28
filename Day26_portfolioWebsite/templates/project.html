@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="section">
+    <div class="section-heading">
+        <p class="eyebrow">Portfolio</p>
+        <h2>All projects</h2>
+    </div>
+
+    <div class="card-grid full-grid">
+        {% for project in projects %}
+        <article class="project-card">
+            <img src="{{ project.image }}" alt="{{ project.title }}">
+            <div class="card-body">
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.description }}</p>
+                <a href="{{ project.link }}" target="_blank" rel="noopener noreferrer">Open project</a>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
